@@ -7,13 +7,14 @@ export class RandomValues implements IRandomValues {
   private from: number;
   private to: number;
 
-  constructor(payload: IRandomValuesConstructorPayload) {
-    Object.assign(this, payload);
+  constructor({ from, to }: IRandomValuesConstructorPayload) {
+    this.from = from;
+    this.to = to;
 
     return this;
   }
 
-  public getRandomValue(): number {
-    return Math.random();
+  public getRandomValue(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }
