@@ -10,11 +10,9 @@ export class RandomValues implements IRandomValues {
   constructor({ from, to }: IRandomValuesConstructorPayload) {
     this.from = from;
     this.to = to;
-
-    return this;
   }
 
-  public getRandomValue(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+  public getRandomValue(): number {
+    return Math.floor(Math.random() * (this.to - this.from + 1) + this.from);
   }
 }

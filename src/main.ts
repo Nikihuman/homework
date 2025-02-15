@@ -8,7 +8,7 @@ function bootstrap() {
     const randomValueFirst = new RandomValues({
       from,
       to,
-    }).getRandomValue(from, to);
+    }).getRandomValue();
 
     console.log(`First random value: ${randomValueFirst}`);
   } catch (error) {
